@@ -1,7 +1,7 @@
 <div class="dropdown no-radius">
     <div class="dropdown-toggle" data-toggle="dropdown">
         <span>
-            <h4>Hello, admin<span class="fa fa-caret-down" style="font-size:22px;margin-left:15px;"></span></h4>
+            <h4>Hello, {{ $user->firstname }}<span class="fa fa-caret-down" style="font-size:22px;margin-left:15px;"></span></h4>
         </span>
     </div><!-- close div .dropdown-toggle -->
     <ul class="dropdown-menu pull-right no-radius" style="">
@@ -21,7 +21,7 @@
                 <h4 class="modal-title">Your API Token</h4>
             </div>
             <div class="modal-body">
-                <p>Token HERE</p>
+                <p>{{ $user->api_token }}</p>
             </div>
         </div><!-- close div .modal-content -->
     </div>

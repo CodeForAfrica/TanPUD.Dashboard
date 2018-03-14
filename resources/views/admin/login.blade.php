@@ -7,7 +7,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-6 offset-md-3 login-box">
+            <div class="col-md-6 col-md-offset-3 login-box">
                 <div class="brand">
                     <h1>TanPUD</h1>
                 </div>
@@ -28,8 +28,7 @@
                             <input type="password" class="form-control input-no-background" name="password" placeholder="Password" />
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-lg btn-block btn-login-purple no-radius" value="LOGIN" style="display:none;"/>
-                            <a href="{{ route('dashboard') }}" type="button" class="btn btn-lg btn-block btn-login-purple no-radius">LOGIN</a>
+                            <input type="submit" class="btn btn-lg btn-block btn-login-purple no-radius" value="LOGIN" />
                         </div>
                     </form>
                 </div>

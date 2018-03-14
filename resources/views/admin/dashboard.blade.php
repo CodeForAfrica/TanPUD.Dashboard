@@ -33,7 +33,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">Total Members</div>
                                 <div class="panel-body" style="min-height:200px;">
-                                    <span><span class="color-pink"><strong>320</strong></span> Members</span>
+                                    <span><span class="color-pink"><strong>0</strong></span> Members</span>
                                 </div>
                             </div>
                         </div><!-- close div .col-md-3 -->
@@ -42,7 +42,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">Total Disputes</div>
                                 <div class="panel-body" style="min-height:200px;">
-                                    <span><span class="color-pink"><strong>140</strong></span> Disputes</span>
+                                    <span><span class="color-pink"><strong>0</strong></span> Disputes</span>
                                 </div>
                             </div>
                         </div><!-- close div .col-md-3 -->
@@ -51,7 +51,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">Total Reports</div>
                                 <div class="panel-body" style="min-height:200px;">
-                                    <span><span class="color-pink"><strong>23</strong></span> Reports</span>
+                                    <span><span class="color-pink"><strong>0</strong></span> Reports</span>
                                 </div>
                             </div>
                         </div><!-- close div .col-md-3 -->

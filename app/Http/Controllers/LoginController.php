@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class LoginController extends Controller
 {
     public function index()
     {
         // Checking for session.
-        if(session()->has('user'))
+        if(Auth::check())
         {
             return redirect('dashboard');
         }

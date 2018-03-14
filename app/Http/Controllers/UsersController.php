@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 
-class DashboardController extends Controller
+class UsersController extends Controller
 {
     public function index()
     {
@@ -18,9 +18,9 @@ class DashboardController extends Controller
             $user = Auth::user();
 
             $data = array(
-                'page' => 'Dashboard'
+                'page' => 'Users'
             );
-            return view('admin.dashboard',compact('user','data'));
+            return view('admin.users.main',compact('user','data'));
         }
     }
 }
