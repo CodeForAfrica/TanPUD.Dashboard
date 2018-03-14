@@ -1,0 +1,272 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background: #343940;
+    min-height: 100%;
+}
+
+body.login{
+    background: #343940;
+}
+
+.login-box{
+    margin-top: 300px;
+    height: auto;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.login-box .brand{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-box .brand h1{
+    color: #fff;
+    font-family: 'Anton', sans-serif;
+    /*text-transform: uppercase;*/
+}
+
+.input-no-background{
+    border-radius: 0px;
+    height: 50px;
+    padding-left: 25px;
+    margin-bottom: 20px;
+    background: none;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.content-main{
+    height: 100vh;
+    overflow: auto;
+}
+
+.menus{
+    background: #1f2e54;
+    height: 100vh;
+    padding: 0px;
+}
+
+.menus .logo{
+    text-align: center;
+    background: #1f2e54;
+    padding: 10px;
+}
+
+.logo h1{
+    color: #fff;
+    font-family: 'Anton', sans-serif;
+}
+
+.navs{
+    color: #dedede;
+}
+
+.navs ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.navs ul li{
+    height: auto;
+    font-size: 18px;
+    padding: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(28,33,40,0.3);;
+    cursor: pointer;
+}
+
+.navs ul a:link{
+    text-decoration: none;
+    color: #dedede;
+}
+
+.navs ul li:hover{
+    text-decoration: none;
+    color: #dedede;
+    border-left: 5px solid #1f2e54;
+    background:rgba(28,33,40,0.5);
+}
+
+.navs ul a:visited{
+    text-decoration: none;
+    color: #dedede;
+}
+
+.navs ul a:active{
+    text-decoration: none;
+    color: #dedede;
+}
+
+.navs ul li.active{
+    border-left: 5px solid #1f2e54;
+    background: #1c2128;
+}
+
+.contents{
+    background: #fafbfb;
+    height: 100vh;
+    padding: 0px;
+    overflow: auto;
+}
+
+.header{
+    border-bottom: 1px solid #dedede;
+    background: #fff;
+    height: 85px;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin:0px;
+}
+
+.header h2{
+    margin-left: 0px;
+}
+
+.header .user{
+    border-left: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+    height: 85px;
+    text-align: center;
+    padding-top: 15px;
+    cursor: pointer;
+}
+
+.user .dropdown-menu{
+    padding: 10px;
+    top: 57px;
+    margin-right:-16px;
+    border-top: none;
+}
+
+.main{
+    margin: 0px;
+    padding: 60px;
+}
+
+.things{
+    padding: 60px;
+    overflow: auto;
+}
+
+.color-pink{
+    color: #1f2e54;
+}
+
+.no-radius{
+    border-radius: 0px;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: rgba(31, 46, 84, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 3px rgba(31, 46, 84, 0.6);
+  outline: 0 none;
+}
+
+.btn-login { 
+  color: #FFFFFF; 
+  background-color: #1f2e54; 
+  border-color: #1f2e54; 
+} 
+ 
+.btn-login:hover, 
+.btn-login:focus, 
+.btn-login:active, 
+.btn-login.active, 
+.open .dropdown-toggle.btn-login { 
+  color: #FFFFFF; 
+  background-color: #EB6A6A; 
+  border-color: #1f2e54; 
+} 
+ 
+.btn-login:active, 
+.btn-login.active, 
+.open .dropdown-toggle.btn-login { 
+  background-image: none; 
+} 
+ 
+.btn-login.disabled, 
+.btn-login[disabled], 
+fieldset[disabled] .btn-login, 
+.btn-login.disabled:hover, 
+.btn-login[disabled]:hover, 
+fieldset[disabled] .btn-login:hover, 
+.btn-login.disabled:focus, 
+.btn-login[disabled]:focus, 
+fieldset[disabled] .btn-login:focus, 
+.btn-login.disabled:active, 
+.btn-login[disabled]:active, 
+fieldset[disabled] .btn-login:active, 
+.btn-login.disabled.active, 
+.btn-login[disabled].active, 
+fieldset[disabled] .btn-login.active { 
+  background-color: #1f2e54; 
+  border-color: #1f2e54; 
+} 
+ 
+.btn-login .badge { 
+  color: #1f2e54; 
+  background-color: #FFFFFF; 
+}
+
+.btn-login-purple { 
+    color: #ffffff; 
+    background-color: #3F88C5; 
+    border-color: #3F88C5; 
+  } 
+   
+  .btn-login-purple:hover, 
+  .btn-login-purple:focus, 
+  .btn-login-purple:active, 
+  .btn-login-purple.active, 
+  .open .dropdown-toggle.btn-login-purple { 
+    color: #ffffff; 
+    background-color: #2B71AB; 
+    border-color: #3F88C5; 
+  } 
+   
+  .btn-login-purple:active, 
+  .btn-login-purple.active, 
+  .open .dropdown-toggle.btn-login-purple { 
+    background-image: none; 
+  } 
+   
+  .btn-login-purple.disabled, 
+  .btn-login-purple[disabled], 
+  fieldset[disabled] .btn-login-purple, 
+  .btn-login-purple.disabled:hover, 
+  .btn-login-purple[disabled]:hover, 
+  fieldset[disabled] .btn-login-purple:hover, 
+  .btn-login-purple.disabled:focus, 
+  .btn-login-purple[disabled]:focus, 
+  fieldset[disabled] .btn-login-purple:focus, 
+  .btn-login-purple.disabled:active, 
+  .btn-login-purple[disabled]:active, 
+  fieldset[disabled] .btn-login-purple:active, 
+  .btn-login-purple.disabled.active, 
+  .btn-login-purple[disabled].active, 
+  fieldset[disabled] .btn-login-purple.active { 
+    background-color: #3F88C5; 
+    border-color: #3F88C5; 
+  } 
+   
+  .btn-login-purple .badge { 
+    color: #3F88C5; 
+    background-color: #ffffff; 
+  }
