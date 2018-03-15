@@ -75,7 +75,18 @@ Route::get('disputes', [
     'as' => 'disputes'
 ]);
 
+// Members routes
 Route::get('members', [
     'uses' => 'MembersController@index',
     'as' => 'members'
+]);
+
+Route::get('members/view/{id}', [
+    'uses' => 'MembersController@view',
+    'as' => 'members.view'
+]);
+
+Route::get('members/edit/{id}', [
+    'uses' => 'MembersController@edit',
+    'as' => 'members.edit'
 ]);

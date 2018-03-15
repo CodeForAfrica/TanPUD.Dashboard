@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 
+use App\Member;
+
 class DashboardController extends Controller
 {
     public function index()
@@ -17,8 +19,11 @@ class DashboardController extends Controller
         else{
             $user = Auth::user();
 
+            $total_members = Member::count();
+
             $data = array(
-                'page' => 'Dashboard'
+                'page' => 'Dashboard',
+                'total_members' => $total_members
             );
             return view('admin.dashboard',compact('user','data'));
         }

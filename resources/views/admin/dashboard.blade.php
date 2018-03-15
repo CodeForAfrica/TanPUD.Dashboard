@@ -33,7 +33,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">Total Members</div>
                                 <div class="panel-body" style="min-height:200px;">
-                                    <span><span class="color-pink"><strong>0</strong></span> Members</span>
+                                    <span><span class="color-pink"><strong>{{ $data['total_members'] }}</strong></span> Members</span>
                                 </div>
                             </div>
                         </div><!-- close div .col-md-3 -->

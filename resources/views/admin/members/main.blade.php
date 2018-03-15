@@ -52,59 +52,35 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Fullname</th>
+                                    <th>Gender</th>
+                                    <th>Registration Number</th>
                                     <th>Maskani</th>
                                     <th>Location</th>
+                                    <th>Drug Type</th>
+                                    <th>Drug Use</th>
                                     <th style="width:170px;">Options</th>
                                 </tr>
                                 </thead>
                                 <tbody style="text-align:left;">
-                                    <?php $n=1; ?>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Juma Abdallah</td>
-                                        <td>Mwigulu</td>
-                                        <td>Temeke</td>
-                                        <td>
-                                            <a href="#" class="btn btn-xs btn-danger no-radius" style="margin-right:10px;" disabled>Delete</a>
-                                            <a href="#" type="button" class="btn btn-xs btn-warning no-radius" style="margin-right:10px;" disabled>Edit</a>
-                                            <a href="#" type="button" class="btn btn-xs btn-success no-radius" disabled>View</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Juma Abdallah</td>
-                                        <td>Mwigulu</td>
-                                        <td>Temeke</td>
-                                        <td>
-                                            <a href="#" class="btn btn-xs btn-danger no-radius" style="margin-right:10px;" disabled>Delete</a>
-                                            <a href="#" type="button" class="btn btn-xs btn-warning no-radius" style="margin-right:10px;" disabled>Edit</a>
-                                            <a href="#" type="button" class="btn btn-xs btn-success no-radius" disabled>View</a>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Juma Abdallah</td>
-                                        <td>Mwigulu</td>
-                                        <td>Temeke</td>
-                                        <td>
-                                            <a href="#" class="btn btn-xs btn-danger no-radius" style="margin-right:10px;" disabled>Delete</a>
-                                            <a href="#" type="button" class="btn btn-xs btn-warning no-radius" style="margin-right:10px;" disabled>Edit</a>
-                                            <a href="#" type="button" class="btn btn-xs btn-success no-radius" disabled>View</a>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Juma Abdallah</td>
-                                        <td>Mwigulu</td>
-                                        <td>Temeke</td>
-                                        <td>
-                                            <a href="#" class="btn btn-xs btn-danger no-radius" style="margin-right:10px;" disabled>Delete</a>
-                                            <a href="#" type="button" class="btn btn-xs btn-warning no-radius" style="margin-right:10px;" disabled>Edit</a>
-                                            <a href="#" type="button" class="btn btn-xs btn-success no-radius" disabled>View</a>
-                                        </td>
-                                    </tr>   
+                                    @if(count($data['members']) > 0)
+                                        @foreach($data['members'] as $member)
+                                        <tr>
+                                            <td>{{ $member->id }}</td>
+                                            <td>{{ $member->firstname }} {{ $member->middlename }} {{ $member->surname }}</td>
+                                            <td>{{ $member->gender }}</td>
+                                            <td>{{ $member->registration_number }}</td>
+                                            <td>{{ $member->maskani }}</td>
+                                            <td>{{ $member->street }}</td>
+                                            <td>{{ $member->drug_type }}</td>
+                                            <td>{{ $member->drug_use }}</td>
+                                            <td>
+                                                <a href="#" class="btn btn-xs btn-danger no-radius" style="margin-right:10px;" disabled>Delete</a>
+                                                <a href="#" type="button" class="btn btn-xs btn-warning no-radius" style="margin-right:10px;">Edit</a>
+                                                <a href="{{ route('members.view',$member->id) }}" type="button" class="btn btn-xs btn-success no-radius">View</a>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    @endif
                                 </tbody>
                             </table>
                         </div><!-- close div col-md-12 -->
