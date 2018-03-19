@@ -17,7 +17,7 @@ class MembersController extends Controller
         }
         else{
             $user = Auth::user();
-            $members = Member::all();
+            $members = $this->getMembers();
 
             $data = array(
                 'page' => 'Members',
@@ -27,7 +27,7 @@ class MembersController extends Controller
         }
     }
 
-    public function view($id=0)
+    public function view(Request $request)
     {
         // Checking for session.
         if(!Auth::check())
@@ -36,16 +36,65 @@ class MembersController extends Controller
         }
         else{
             $user = Auth::user();
-            $member = Member::where('id', $id)->first();
 
-            if($member){
-                $data = array(
-                    'page' => 'Members',
-                    'member' => $member
-                );
-                return view('admin.members.view',compact('user','data'));
+            if(isset($request->firstname) && isset($request->middlename) && isset($request->surname)){
+                $member = $this->getMembers($request->firstname, $request->middlename, $request->surname);
+                
+                if($member){
+                    $data = array(
+                        'page' => 'Members',
+                        'member' => $member[0]
+                    );
+                    return view('admin.members.view',compact('user','data'));
+                }
+                else return redirect('members');
             }
             else return redirect('members');
+        }
+    }
+
+    public function getMembers($firstname = "", $middlename = "", $surname = ""){
+        $client = new \GuzzleHttp\Client(['http_errors' => true]);
+
+        $url = "http://54.76.5.187:8990/restsql/res/Member?_output=application/json&_limit=50&_offset=0";
+
+        if($firstname != "" && $middlename != "" && $surname != ""){
+            $url .= "&FIRSTNAME=";
+            $url .= $firstname;
+            $url .= "&MIDDLENAME=";
+            $url .= $middlename;
+            $url .= "&SURNAME=";
+            $url .= $surname;
+        }
+
+        try{
+            $response = $client->request('GET', $url);
+            $response_json = json_decode($response->getBody());
+
+            if($response_json->members)
+            {
+                return $response_json->members;
+            }
+            else{
+                // No Users.
+                return null;
+            }
+        }
+        catch (ClientErrorResponseException $e) {
+            \Log::info("Client error :" . $e->getResponse()->getBody(true));
+            return null;
+        }
+        catch (ServerErrorResponseException $e) {
+            \Log::info("Server error" . $e->getResponse()->getBody(true));
+            return null;
+        }
+        catch (BadResponseException $e) {
+            \Log::info("BadResponse error" . $e->getResponse()->getBody(true));
+            return null;
+        }
+        catch (\Exception $e) {
+            \Log::info("Err" . $e->getMessage());
+            return null;
         }
     }
 }

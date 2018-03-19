@@ -19,7 +19,7 @@
                 <div class="header">
                     <div class="row">
                         <div class="col-md-10">
-                            <h2>Users <small class="color-pink"> - View User</small></h2>
+                            <h2>Users <small class="color-pink"> - View Member</small></h2>
                         </div>
                         <div class="col-md-2 user">
                             @include('admin.includes.user')
@@ -33,125 +33,138 @@
                             <table class="table">
                                 <tr>
                                     <th style="width:40%;">Fullname</th>
-                                    <td>{{ $data['member']->firstname }} {{ $data['member']->middlename }} {{ $data['member']->surname }}</td>
+                                    <td>{{ $data['member']->FIRSTNAME }} {{ $data['member']->MIDDLENAME }} {{ $data['member']->SURNAME }}</td>
                                 </tr>
                                 <tr>
                                     <th>Birth Date</th>
-                                    <td>{{ $data['member']->birth_date }}</td>
+                                    <td>{{ $data['member']->BIRTH_DATE }}</td>
                                 </tr>
                                 <tr>
                                     <th>Birth Place</th>
-                                    <td>{{ $data['member']->birth_place }}</td>
+                                    <td>{{ $data['member']->BIRTH_PLACE }}</td>
                                 </tr>
                                 <tr>
                                     <th>Gender</th>
-                                    <td>{{ $data['member']->gender }}</td>
+                                    <td>{{ $data['member']->GENDER }}</td>
                                 </tr>
                                 <tr>
                                     <th>Registration Number</th>
-                                    <td>{{ $data['member']->registration_number }}</td>
+                                    <td>{{ $data['member']->REGISTRATION_NUMBER }}</td>
                                 </tr>
                                 <tr>
                                     <th>Maskani</th>
-                                    <td>{{ $data['member']->maskani }}</td>
+                                    <td>{{ $data['member']->MASKANI }}</td>
                                 </tr>
                                 <tr>
                                     <th>Region</th>
-                                    <td>{{ $data['member']->region }}</td>
+                                    <td>{{ $data['member']->REGION }}</td>
                                 </tr>
                                 <tr>
                                     <th>District</th>
-                                    <td>{{ $data['member']->district }}</td>
+                                    <td>{{ $data['member']->DISTRICT }}</td>
                                 </tr>
                                 <tr>
                                     <th>Ward</th>
-                                    <td>{{ $data['member']->ward }}</td>
+                                    <td>{{ $data['member']->WARD }}</td>
                                 </tr>
                                 <tr>
                                     <th>Street</th>
-                                    <td>{{ $data['member']->street }}</td>
+                                    <td>{{ $data['member']->STREET }}</td>
                                 </tr>
                                 <tr>
                                     <th>Drug Type</th>
-                                    <td>{{ $data['member']->drug_type }}</td>
+                                    <td>{{ $data['member']->DRUG_TYPE }}</td>
                                 </tr>
+                                @if(isset($data['member']->DRUG_TYPE_OTHER))
                                 <tr>
                                     <th>Other Drug Type</th>
-                                    <td>{{ $data['member']->drug_type_other }}</td>
+                                    <td>{{ $data['member']->DRUG_TYPE_OTHER }}</td>
                                 </tr>
+                                @endif
+                                @if(isset($data['member']->DRUG_USE))
                                 <tr>
                                     <th>Drug Use</th>
-                                    <td>{{ $data['member']->drug_use }}</td>
+                                    <td>{{ $data['member']->DRUG_USE }}</td>
                                 </tr>
+                                @endif
                                 <tr>
                                     <th>Overdose</th>
-                                    <td>{{ $data['member']->overdose }}</td>
+                                    <td>{{ $data['member']->OVERDOSE }}</td>
                                 </tr>
+                                @if(isset($data['member']->OVERDOSE_DATE))
                                 <tr>
                                     <th>Overdose Date</th>
-                                    <td>{{ $data['member']->overdose_date }}</td>
+                                    <td>{{ $data['member']->OVERDOSE_DATE }}</td>
                                 </tr>
+                                @endif
                                 <tr>
                                     <th>HIV Test</th>
-                                    <td>{{ $data['member']->hiv_test }}</td>
+                                    <td>{{ $data['member']->HIV_TEST }}</td>
                                 </tr>
+                                @if(isset($data['member']->HIV_GROUP_HIV_TEST_DATE))
                                 <tr>
                                     <th>HIV Test Date</th>
-                                    <td>{{ $data['member']->hiv_test_date }}</td>
+                                    <td>{{ $data['member']->HIV_GROUP_HIV_TEST_DATE }}</td>
                                 </tr>
+                                @endif
+                                @if(isset($data['member']->HIV_GROUP_HIV_TEST_RESULTS))
                                 <tr>
                                     <th>HIV Test Results</th>
-                                    <td>{{ $data['member']->hiv_test_results }}</td>
+                                    <td>{{ $data['member']->HIV_GROUP_HIV_TEST_RESULTS }}</td>
                                 </tr>
+                                @endif
                                 <tr>
                                     <th>TB Test</th>
-                                    <td>{{ $data['member']->tb_test }}</td>
+                                    <td>{{ $data['member']->TB_TEST }}</td>
                                 </tr>
+                                @if(isset($data['member']->TB_GROUP_TB_TEST_DATE))
                                 <tr>
                                     <th>TB Test Date</th>
-                                    <td>{{ $data['member']->tb_test_date }}</td>
+                                    <td>{{ $data['member']->TB_GROUP_TB_TEST_DATE }}</td>
                                 </tr>
+                                @endif
+                                @if(isset($data['member']->TB_GROUP_TB_TEST_RESULTS))
                                 <tr>
                                     <th>TB Test Results</th>
-                                    <td>{{ $data['member']->tb_test_results }}</td>
+                                    <td>{{ $data['member']->TB_GROUP_TB_TEST_RESULTS }}</td>
                                 </tr>
+                                @endif
                                 <tr>
                                     <th>HPV Test</th>
-                                    <td>{{ $data['member']->hpv_test }}</td>
+                                    <td>{{ $data['member']->HPV_TEST }}</td>
                                 </tr>
+                                @if(isset($data['member']->HPV_GROUP_HPV_TEST_DATE))
                                 <tr>
                                     <th>HPV Test Date</th>
-                                    <td>{{ $data['member']->hpv_test_date }}</td>
+                                    <td>{{ $data['member']->HPV_GROUP_HPV_TEST_DATE }}</td>
                                 </tr>
+                                @endif
+                                @if(isset($data['member']->HPV_GROUP_HPV_TEST_RESULTS))
                                 <tr>
                                     <th>HPV Test Results</th>
-                                    <td>{{ $data['member']->hpv_test_results }}</td>
+                                    <td>{{ $data['member']->HPV_GROUP_HPV_TEST_RESULTS }}</td>
                                 </tr>
+                                @endif
                                 <tr>
                                     <th>Mental Health Test</th>
-                                    <td>{{ $data['member']->mental_health_test }}</td>
+                                    <td>{{ $data['member']->MENTAL_HEALTH_TEST }}</td>
                                 </tr>
+                                @if(isset($data['member']->MENTAL_HEALTH_GROUP_MENTAL_HEALTH_TEST_DATE))
                                 <tr>
                                     <th>Mental Health Test Date</th>
-                                    <td>{{ $data['member']->mental_health_test_date }}</td>
+                                    <td>{{ $data['member']->MENTAL_HEALTH_GROUP_MENTAL_HEALTH_TEST_DATE }}</td>
                                 </tr>
+                                @endif
+                                @if(isset($data['member']->MENTAL_HEALTH_GROUP_MENTAL_HEALTH_TEST_RESULTS))
                                 <tr>
                                     <th>Mental Health Test Results</th>
-                                    <td>{{ $data['member']->mental_health_test_results }}</td>
+                                    <td>{{ $data['member']->MENTAL_HEALTH_GROUP_MENTAL_HEALTH_TEST_RESULTS }}</td>
                                 </tr>
-                                <tr>
-                                    <th>Services</th>
-                                    <td>{{ $data['member']->services }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Date Registered</th>
-                                    <td>{{ date('M j Y g:i A', strtotime($data['member']->created_at)) }}</td>
-                                </tr>
+                                @endif
                             </table>
 
                             <div class="pull-right">
-                                <a href="#" class="btn btn-md btn-danger no-radius" style="margin-right:10px;" disabled>Delete</a>
-                                <a href="{{ route('members.edit',$data['member']->id) }}" type="button" class="btn btn-md btn-warning no-radius" style="margin-right:10px;">Edit</a>
+                                <a href="{{ route('members') }}" type="button" class="btn btn-md btn-warning no-radius" style="margin-right:10px;">Back</a>
                             </div>
                         </div><!-- close div col-md-12 -->
                     </div><!-- close div .row -->

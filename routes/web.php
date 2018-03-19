@@ -70,9 +70,15 @@ Route::post('users/create', [
     'as' => 'users.create'
 ]);
 
+// Disputes routes
 Route::get('disputes', [
     'uses' => 'DisputesController@index',
     'as' => 'disputes'
+]);
+
+Route::get('disputes/view', [
+    'uses' => 'DisputesController@view',
+    'as' => 'disputes.view'
 ]);
 
 // Members routes
@@ -81,7 +87,7 @@ Route::get('members', [
     'as' => 'members'
 ]);
 
-Route::get('members/view/{id}', [
+Route::get('members/view', [
     'uses' => 'MembersController@view',
     'as' => 'members.view'
 ]);

@@ -34,7 +34,7 @@
                 <div class="main">
                     <div class="row">
                         <div class="col-md-12">
-                            <button type="button" class="btn btn-login pull-right no-radius" data-toggle="modal" data-target="#newUserModal">Add New Dispute</button>
+                            <button type="button" class="btn btn-login pull-right no-radius" data-toggle="modal" data-target="#newUserModal" style="display:none;">Add New Dispute</button>
                         </div>
                     </div><!-- close div .row -->
                     <br />
@@ -51,68 +51,33 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Mahali</th>
-                                    <th>Aina Ya Mgogoro</th>
-                                    <th>Wahusika</th>
+                                    <th>Jina CRT</th>
+                                    <th>Jina Maskani</th>
+                                    <th>Tarehe ya Mgogoro</th>
+                                    <th>Aina ya Mgogoro</th>
                                     <th>Maelezo</th>
-                                    <th>Tarehe</th>
-                                    <th style="width:170px;">Options</th>
+                                    <th style="width:70px;">Options</th>
                                 </tr>
                                 </thead>
                                 <tbody style="text-align:left;">
-                                    <?php $n=1; ?>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Mbagala, Dar es Salaam</td>
-                                        <td>Wizi</td>
-                                        <td>Aisha Juma, Muuna Haji</td>
-                                        <td>Dispute description here</td>
-                                        <td>23/11/2017</td>
-                                        <td>
-                                            <a href="#" class="btn btn-xs btn-danger no-radius" style="margin-right:10px;" disabled>Delete</a>
-                                            <a href="#" type="button" class="btn btn-xs btn-warning no-radius" style="margin-right:10px;" disabled>Edit</a>
-                                            <a href="#" type="button" class="btn btn-xs btn-success no-radius" disabled>View</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Mbagala, Dar es Salaam</td>
-                                        <td>Wizi</td>
-                                        <td>Aisha Juma, Muuna Haji</td>
-                                        <td>Dispute description here</td>
-                                        <td>23/11/2017</td>
-                                        <td>
-                                            <a href="#" class="btn btn-xs btn-danger no-radius" style="margin-right:10px;" disabled>Delete</a>
-                                            <a href="#" type="button" class="btn btn-xs btn-warning no-radius" style="margin-right:10px;" disabled>Edit</a>
-                                            <a href="#" type="button" class="btn btn-xs btn-success no-radius" disabled>View</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Mbagala, Dar es Salaam</td>
-                                        <td>Wizi</td>
-                                        <td>Aisha Juma, Muuna Haji</td>
-                                        <td>Dispute description here</td>
-                                        <td>23/11/2017</td>
-                                        <td>
-                                            <a href="#" class="btn btn-xs btn-danger no-radius" style="margin-right:10px;" disabled>Delete</a>
-                                            <a href="#" type="button" class="btn btn-xs btn-warning no-radius" style="margin-right:10px;" disabled>Edit</a>
-                                            <a href="#" type="button" class="btn btn-xs btn-success no-radius" disabled>View</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Mbagala, Dar es Salaam</td>
-                                        <td>Wizi</td>
-                                        <td>Aisha Juma, Muuna Haji</td>
-                                        <td>Dispute description here</td>
-                                        <td>23/11/2017</td>
-                                        <td>
-                                            <a href="#" class="btn btn-xs btn-danger no-radius" style="margin-right:10px;" disabled>Delete</a>
-                                            <a href="#" type="button" class="btn btn-xs btn-warning no-radius" style="margin-right:10px;" disabled>Edit</a>
-                                            <a href="#" type="button" class="btn btn-xs btn-success no-radius" disabled>View</a>
-                                        </td>
-                                    </tr>
+                                    <?php $n= 1; ?>
+                                    @if(count($data['disputes']) > 0)
+                                        @foreach($data['disputes'] as $dispute)
+                                        <tr>
+                                            <td>{{ $n++ }}</td>
+                                            <td>{{ $dispute->JINA_CRT }}</td>
+                                            <td>{{ $dispute->JINA_LA_MASKANI }}</td>
+                                            <td>{{ $dispute->TAREHE_YA_MGOGORO }}</td>
+                                            <td>{{ $dispute->AINA_YA_MGOGOGRO }}</td>
+                                            <td>{{ $dispute->MAELEZO_YA_MGOGORO }}</td>
+                                            <td>
+                                                <a href="#" class="btn btn-xs btn-danger no-radius" style="margin-right:10px; display:none;" disabled>Delete</a>
+                                                <a href="#" type="button" class="btn btn-xs btn-warning no-radius" style="margin-right:10px;display:none;">Edit</a>
+                                                <a href="{{ route('disputes.view') }}?uri={{ $dispute->_URI }}" type="button" class="btn btn-xs btn-success no-radius pull-right">View</a>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    @endif
                                 </tbody>
                             </table>
                         </div><!-- close div col-md-12 -->

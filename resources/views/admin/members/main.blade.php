@@ -34,7 +34,7 @@
                 <div class="main">
                     <div class="row">
                         <div class="col-md-12">
-                            <button type="button" class="btn btn-login pull-right no-radius" data-toggle="modal" data-target="#newUserModal">Add New Member</button>
+                            <button type="button" class="btn btn-login pull-right no-radius" data-toggle="modal" data-target="#newUserModal" style="display:none;">Add New Member</button>
                         </div>
                     </div><!-- close div .row -->
                     <br />
@@ -57,26 +57,27 @@
                                     <th>Maskani</th>
                                     <th>Location</th>
                                     <th>Drug Type</th>
-                                    <th>Drug Use</th>
-                                    <th style="width:170px;">Options</th>
+                                    <th>HIV TEST</th>
+                                    <th style="width:70px;">Options</th>
                                 </tr>
                                 </thead>
                                 <tbody style="text-align:left;">
+                                    <?php $n= 1; ?>
                                     @if(count($data['members']) > 0)
                                         @foreach($data['members'] as $member)
                                         <tr>
-                                            <td>{{ $member->id }}</td>
-                                            <td>{{ $member->firstname }} {{ $member->middlename }} {{ $member->surname }}</td>
-                                            <td>{{ $member->gender }}</td>
-                                            <td>{{ $member->registration_number }}</td>
-                                            <td>{{ $member->maskani }}</td>
-                                            <td>{{ $member->street }}</td>
-                                            <td>{{ $member->drug_type }}</td>
-                                            <td>{{ $member->drug_use }}</td>
+                                            <td>{{ $n++ }}</td>
+                                            <td>{{ $member->FIRSTNAME }} {{ $member->MIDDLENAME }} {{ $member->SURNAME }}</td>
+                                            <td>{{ $member->GENDER }}</td>
+                                            <td>{{ $member->REGISTRATION_NUMBER }}</td>
+                                            <td>{{ $member->MASKANI }}</td>
+                                            <td>{{ $member->STREET }}</td>
+                                            <td>{{ $member->DRUG_TYPE }}</td>
+                                            <td>{{ $member->HIV_TEST }}</td>
                                             <td>
-                                                <a href="#" class="btn btn-xs btn-danger no-radius" style="margin-right:10px;" disabled>Delete</a>
-                                                <a href="#" type="button" class="btn btn-xs btn-warning no-radius" style="margin-right:10px;">Edit</a>
-                                                <a href="{{ route('members.view',$member->id) }}" type="button" class="btn btn-xs btn-success no-radius">View</a>
+                                                <a href="#" class="btn btn-xs btn-danger no-radius" style="margin-right:10px; display:none;" disabled>Delete</a>
+                                                <a href="#" type="button" class="btn btn-xs btn-warning no-radius" style="margin-right:10px;display:none;">Edit</a>
+                                                <a href="{{ route('members.view') }}?firstname={{ $member->FIRSTNAME }}&middlename={{ $member->MIDDLENAME }}&surname={{ $member->SURNAME }}" type="button" class="btn btn-xs btn-success no-radius pull-right">View</a>
                                             </td>
                                         </tr>
                                         @endforeach
