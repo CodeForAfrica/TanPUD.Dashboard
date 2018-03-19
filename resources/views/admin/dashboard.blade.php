@@ -42,7 +42,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">Total Disputes</div>
                                 <div class="panel-body" style="min-height:200px;">
-                                    <span><span class="color-pink"><strong>{{ $data['total_members'] }}</strong></span> Disputes</span>
+                                    <span><span class="color-pink"><strong>{{ $data['total_disputes'] }}</strong></span> Disputes</span>
                                 </div>
                             </div>
                         </div><!-- close div .col-md-3 -->
