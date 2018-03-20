@@ -61,7 +61,7 @@
                                 </tr>
                                 <tr>
                                     <th>Aina ya Mgogoro</th>
-                                    <td>{{ $data['dispute']->AINA_YA_MGOGOGRO }}</td>
+                                    <td>{{ $data['dispute']->AINA_YA_MGOGORO }}</td>
                                 </tr>
                                 <tr>
                                     <th>Maelezo ya Mgogoro</th>

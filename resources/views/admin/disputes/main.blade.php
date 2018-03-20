@@ -68,7 +68,7 @@
                                             <td>{{ $dispute->JINA_CRT }}</td>
                                             <td>{{ $dispute->JINA_LA_MASKANI }}</td>
                                             <td>{{ $dispute->TAREHE_YA_MGOGORO }}</td>
-                                            <td>{{ $dispute->AINA_YA_MGOGOGRO }}</td>
+                                            <td>{{ $dispute->AINA_YA_MGOGORO }}</td>
                                             <td>{{ $dispute->MAELEZO_YA_MGOGORO }}</td>
                                             <td>
                                                 <a href="#" class="btn btn-xs btn-danger no-radius" style="margin-right:10px; display:none;" disabled>Delete</a>
