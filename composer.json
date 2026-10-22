@@ -56,6 +56,6 @@
             "php": "8.3.36"
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
